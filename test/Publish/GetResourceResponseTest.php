@@ -25,7 +25,7 @@ class GetResourceResponseTest extends TestCase
           }
         }';
 
-        $resource = new PublishResource(PublishResource::TYPE_CONTAINER, '123456','Example Container');
+        $resource = new PublishResource(PublishResource::TYPE_CONTAINER, '123456', 'Example Container');
         $instance = new GetResourceResponse(Response::SUCCESS, $resource);
 
         $json = self::getSerializer()->serialize($instance, 'json');
@@ -33,10 +33,5 @@ class GetResourceResponseTest extends TestCase
         $obj = json_decode($json, false, 512, JSON_THROW_ON_ERROR);
         self::assertEquals($instance->getType(), $obj->type);
         self::assertEquals($instance->getResource()->getType(), $obj->resource->type);
-    }
-
-    public function testCanCreateErrorResponse(): void
-    {
-        $errorInstance = GetResourceResponse::errorWith('');
     }
 }
