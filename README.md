@@ -7,6 +7,7 @@ Some utilities for building canva extensions.
 Example using the [Symfony Serializer](https://symfony.com/doc/current/components/serializer.html) component:
 
 ```php
+use Canva\Publish\GetResourceRequest;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
