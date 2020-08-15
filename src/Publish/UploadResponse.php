@@ -2,11 +2,10 @@
 
 namespace Canva\Publish;
 
-class UploadResponse
-{
-    public const SUCCESS = 'SUCCESS';
-    public const ERROR = 'ERROR';
+use Canva\Response;
 
+class UploadResponse implements Response
+{
     /**
      * The type of response.
      *

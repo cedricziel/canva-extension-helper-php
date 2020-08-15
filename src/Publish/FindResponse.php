@@ -2,7 +2,9 @@
 
 namespace Canva\Publish;
 
-class FindResponse
+use Canva\Response;
+
+class FindResponse implements Response
 {
     /**
      * The resources to display in the Publish menu.

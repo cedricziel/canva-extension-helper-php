@@ -2,7 +2,9 @@
 
 namespace Canva\Publish;
 
-class GetResourceResponse
+use Canva\Response;
+
+class GetResourceResponse implements Response
 {
     /**
      * The type of response.
@@ -14,9 +16,15 @@ class GetResourceResponse
     /**
      * A container resource.
      *
-     * @var PublishResource
+     * @var ?PublishResource
      */
-    private PublishResource $resource;
+    private ?PublishResource $resource;
+
+    public function __construct(string $type, ?PublishResource $resource)
+    {
+        $this->type = $type;
+        $this->resource = $resource;
+    }
 
     /**
      * @return string
@@ -37,18 +45,18 @@ class GetResourceResponse
     }
 
     /**
-     * @return PublishResource
+     * @return ?PublishResource
      */
-    public function getResource(): PublishResource
+    public function getResource(): ?PublishResource
     {
         return $this->resource;
     }
 
     /**
-     * @param PublishResource $resource
+     * @param ?PublishResource $resource
      * @return GetResourceResponse
      */
-    public function setResource(PublishResource $resource): GetResourceResponse
+    public function setResource(?PublishResource $resource): GetResourceResponse
     {
         $this->resource = $resource;
         return $this;

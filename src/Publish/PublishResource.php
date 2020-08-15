@@ -7,6 +7,8 @@ namespace Canva\Publish;
  */
 class PublishResource
 {
+    public const TYPE_CONTAINER = 'CONTAINER';
+
     /**
      * A unique ID for the resource.
      *
@@ -48,6 +50,16 @@ class PublishResource
      * @var PublishThumbnail|null
      */
     private ?PublishThumbnail $thumbnail;
+
+    public function __construct(string $type, string $id, string $name, bool $isOwner = true, bool $readOnly = false, PublishThumbnail $thumbnail = null)
+    {
+        $this->id = $id;
+        $this->type = $type;
+        $this->name = $name;
+        $this->isOwner = $isOwner;
+        $this->readOnly = $readOnly;
+        $this->thumbnail = $thumbnail;
+    }
 
     /**
      * @return string
