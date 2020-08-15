@@ -46,16 +46,16 @@ class GetResourceRequest
     /**
      * The recommend height (in pixels) for any thumbnails returned in the response.
      *
-     * @var string
+     * @var int
      */
-    private string $preferredThumbnailHeight;
+    private int $preferredThumbnailHeight;
 
     /**
      * The recommend width (in pixels) for any thumbnails returned in the response.
      *
-     * @var string
+     * @var int
      */
-    private string $preferredThumbnailWidth;
+    private int $preferredThumbnailWidth;
 
     /**
      * The ID of the user.
@@ -119,27 +119,27 @@ class GetResourceRequest
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getPreferredThumbnailHeight(): string
+    public function getPreferredThumbnailHeight(): int
     {
         return $this->preferredThumbnailHeight;
     }
 
     /**
-     * @param string $preferredThumbnailHeight
+     * @param int $preferredThumbnailHeight
      * @return GetResourceRequest
      */
-    public function setPreferredThumbnailHeight(string $preferredThumbnailHeight): GetResourceRequest
+    public function setPreferredThumbnailHeight(int $preferredThumbnailHeight): GetResourceRequest
     {
         $this->preferredThumbnailHeight = $preferredThumbnailHeight;
         return $this;
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getPreferredThumbnailWidth(): string
+    public function getPreferredThumbnailWidth(): int
     {
         return $this->preferredThumbnailWidth;
     }
@@ -148,7 +148,7 @@ class GetResourceRequest
      * @param string $preferredThumbnailWidth
      * @return GetResourceRequest
      */
-    public function setPreferredThumbnailWidth(string $preferredThumbnailWidth): GetResourceRequest
+    public function setPreferredThumbnailWidth(int $preferredThumbnailWidth): GetResourceRequest
     {
         $this->preferredThumbnailWidth = $preferredThumbnailWidth;
         return $this;

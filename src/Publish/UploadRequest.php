@@ -17,7 +17,7 @@ class UploadRequest
     /**
      * The assets to upload to the destination platform.
      *
-     * @var Asset[]
+     * @var UploadAsset[]
      */
     private array $assets;
 
@@ -63,7 +63,7 @@ class UploadRequest
     }
 
     /**
-     * @return Asset[]
+     * @return UploadAsset[]
      */
     public function getAssets(): array
     {
@@ -71,10 +71,10 @@ class UploadRequest
     }
 
     /**
-     * @param Asset[] $assets
+     * @param UploadAsset[] $assets
      * @return UploadRequest
      */
-    public function setAssets(array $assets): UploadRequest
+    public function setAssets($assets): UploadRequest
     {
         $this->assets = $assets;
         return $this;
