@@ -34,4 +34,9 @@ class GetResourceResponseTest extends TestCase
         self::assertEquals($instance->getType(), $obj->type);
         self::assertEquals($instance->getResource()->getType(), $obj->resource->type);
     }
+
+    public function testCanCreateErrorResponse(): void
+    {
+        $errorInstance = GetResourceResponse::errorWith('');
+    }
 }
