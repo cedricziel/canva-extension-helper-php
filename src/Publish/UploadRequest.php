@@ -63,7 +63,7 @@ class UploadRequest
     }
 
     /**
-     * @return UploadAsset[]
+     * @return array|UploadAsset[]
      */
     public function getAssets(): array
     {
@@ -74,7 +74,7 @@ class UploadRequest
      * @param UploadAsset[] $assets
      * @return UploadRequest
      */
-    public function setAssets($assets): UploadRequest
+    public function setAssets(array $assets): UploadRequest
     {
         $this->assets = $assets;
         return $this;
