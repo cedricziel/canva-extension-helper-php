@@ -7,7 +7,7 @@ class FindResponse
     /**
      * The resources to display in the Publish menu.
      *
-     * @var array|FindResource[]
+     * @var array|PublishResource[]
      */
     private array $resources;
 
@@ -34,7 +34,7 @@ class FindResponse
     }
 
     /**
-     * @return array|FindResource[]
+     * @return array|PublishResource[]
      */
     public function getResources(): array
     {
@@ -42,7 +42,7 @@ class FindResponse
     }
 
     /**
-     * @param array|FindResource[] $resources
+     * @param array|PublishResource[] $resources
      * @return FindResponse
      */
     public function setResources(array $resources): FindResponse

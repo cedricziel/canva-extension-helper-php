@@ -2,7 +2,7 @@
 
 namespace Canva\Publish;
 
-class FindThumbnail
+class PublishThumbnail
 {
     /**
      * The URL of the thumbnail.
@@ -44,9 +44,9 @@ class FindThumbnail
 
     /**
      * @param string $url
-     * @return FindThumbnail
+     * @return PublishThumbnail
      */
-    public function setUrl(string $url): FindThumbnail
+    public function setUrl(string $url): PublishThumbnail
     {
         $this->url = $url;
         return $this;
@@ -62,9 +62,9 @@ class FindThumbnail
 
     /**
      * @param int|null $height
-     * @return FindThumbnail
+     * @return PublishThumbnail
      */
-    public function setHeight(?int $height): FindThumbnail
+    public function setHeight(?int $height): PublishThumbnail
     {
         $this->height = $height;
         return $this;
@@ -80,9 +80,9 @@ class FindThumbnail
 
     /**
      * @param int|null $width
-     * @return FindThumbnail
+     * @return PublishThumbnail
      */
-    public function setWidth(?int $width): FindThumbnail
+    public function setWidth(?int $width): PublishThumbnail
     {
         $this->width = $width;
         return $this;
