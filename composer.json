@@ -26,10 +26,13 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9.3",
-        "symfony/serializer": "^5.1",
-        "symfony/property-access": "^5.1"
+        "symfony/serializer": "^5.0",
+        "symfony/property-access": "^5.0"
     },
     "scripts": {
         "test": "phpunit"
+    },
+    "suggest": {
+        "symfony/serializer": "For quick and easy de-/serialization"
     }
 }
