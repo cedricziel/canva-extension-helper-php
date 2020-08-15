@@ -18,5 +18,18 @@
         "psr-4": {
             "Canva\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Canva\\Test\\": "test/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "symfony/serializer": "^5.1",
+        "symfony/property-access": "^5.1"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
