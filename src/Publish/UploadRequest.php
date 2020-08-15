@@ -2,9 +2,6 @@
 
 namespace Canva\Publish;
 
-use ReflectionClass;
-use ReflectionProperty;
-
 /**
  * When a user publishes their design, Canva sends a POST request to the following URL:
  *
@@ -63,32 +60,6 @@ class UploadRequest
     public function __construct()
     {
         $this->assets = [];
-    }
-
-    public static function fromJSON(string $input): UploadRequest
-    {
-        $instance = new static();
-
-        $jsonObject = json_decode($input, false, 512, JSON_THROW_ON_ERROR);
-
-        $reflectionClass = new ReflectionClass($input);
-        foreach ($reflectionClass->getProperties() as $prop) {
-            $propName = $prop->name;
-
-            if ($propName === 'assets') {
-                $assets = [];
-                if (is_array($jsonObject->$propName)) {
-
-                }
-            }
-            if (isset($jsonObject->$propName)) {
-                $prop->setValue($instance, $jsonObject->$propName);
-            } else {
-                $prop->setValue($instance, null);
-            }
-        }
-
-        return $instance;
     }
 
     /**
