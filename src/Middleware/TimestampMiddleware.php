@@ -1,9 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Canva;
+namespace Canva\Middleware;
 
+use Canva\HttpHelper;
+use Canva\Request;
 use Http\Message\ResponseFactory;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -32,11 +35,11 @@ class TimestampMiddleware implements MiddlewareInterface
     private LoggerInterface $logger;
 
     /**
-     * @var ResponseFactory
+     * @var ResponseFactoryInterface
      */
-    private ResponseFactory $responseFactory;
+    private ResponseFactoryInterface $responseFactory;
 
-    public function __construct(LoggerInterface $logger, ResponseFactory $responseFactory, int $leniency = 300)
+    public function __construct(LoggerInterface $logger, ResponseFactoryInterface $responseFactory, int $leniency = 300)
     {
         $this->logger = $logger;
         $this->responseFactory = $responseFactory;

@@ -1,9 +1,11 @@
 <?php
 
-namespace Canva;
+namespace Canva\Test;
 
-use Http\Message\ResponseFactory;
+use Canva\Middleware\TimestampMiddleware;
+use Canva\Request;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -18,7 +20,7 @@ class TimestampMiddlewareTest extends TestCase
         $response = $this->createMock(ResponseInterface::class);
         $response->method('getStatusCode')->willReturn(401);
 
-        $responseFactory = $this->createMock(ResponseFactory::class);
+        $responseFactory = $this->createMock(ResponseFactoryInterface::class);
         $responseFactory->expects(self::once())->method('createResponse')->with(401)->willReturn($response);
 
         $handler = $this->createMock(RequestHandlerInterface::class);
@@ -44,7 +46,7 @@ class TimestampMiddlewareTest extends TestCase
         $response = $this->createMock(ResponseInterface::class);
         $response->method('getStatusCode')->willReturn(401);
 
-        $responseFactory = $this->createMock(ResponseFactory::class);
+        $responseFactory = $this->createMock(ResponseFactoryInterface::class);
         $responseFactory->expects(self::once())->method('createResponse')
             ->with(401)->willReturn($response);
 

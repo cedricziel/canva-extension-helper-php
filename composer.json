@@ -13,10 +13,10 @@
     "require": {
         "php": "^7.4",
         "ext-json": "*",
-        "psr/http-server-middleware": "^1.0",
-        "psr/log": "^1.1",
         "psr/http-factory": "^1.0",
-        "psr/http-server-handler": "^1.0"
+        "psr/http-server-handler": "^1.0",
+        "psr/http-server-middleware": "^1.0",
+        "psr/log": "^1.1"
     },
     "autoload": {
         "psr-4": {
@@ -39,5 +39,8 @@
     },
     "suggest": {
         "symfony/serializer": "For quick and easy de-/serialization"
+    },
+    "config": {
+        "sort-packages": true
     }
 }

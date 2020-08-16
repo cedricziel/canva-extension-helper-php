@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class HttpHelperTest extends TestCase
 {
-    public function testCanVerifyTimestamps()
+    public function testCanVerifyTimestamps(): void
     {
         // valid timestamp
         self::assertTrue(HttpHelper::verifyTimestamp(1590980773, 1590980773));

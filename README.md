@@ -31,12 +31,36 @@ $normalizers = [new ArrayDenormalizer(), new ObjectNormalizer(null, null, null, 
 $getResourceRequest = $serializer->deserialize($request, GetResourceRequest::class, 'json');
 ```
 
-## Middlewares
+## Checking incoming requests
+
+Canva requires extensions to check incoming requests for a timestamp skew and a matching HMAC signature.
+This packages provides helpers to cope with that easily.
+
+Checking the timestamp:
+```php
+// allow a skew of 300 seconds
+$leniency = 300;
+
+// the timestamp at which the request was received
+$localTimestamp = time();
+
+// the timestamp at which the request was sent
+$sentTimestamp = $_SERVER['HTTP_X_CANVA_TIMESTAMP'];
+
+// returns a boolean whether the timestamps are close enough together
+$timestampIsOkay = \Canva\HttpHelper::verifyTimestamp($sentTimestamp, $localTimestamp, $leniency)
+```
+
+For examples on how to check the signatures, please check the middleware section.
+
+### Middlewares
 
 Canva requires you to check requests coming from their end. You can do so by manually verifying the timestamp headers
-with the `Canva\HttpHelper` class, or opt for a middleware you have to mount on the paths that canva will be talking to.
+with the `Canva\HttpHelper` class, or opt for a middleware **you have to mount on the paths that canva will be talking to**.
 
-`Canva\TimestampMiddleware` - Checks the timestamp skew
+`Canva\MiddlewareTimestampMiddleware` - Checks the time skew
+`Canva\Middleware\PostHMACMiddleware` - Checks the signature on POST requests
+`Canva\Middleware\GetHMACMiddleware` - Checks the signature on GET requests
 
 ## Disclaimer
 
