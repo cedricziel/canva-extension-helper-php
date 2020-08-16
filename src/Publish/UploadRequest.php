@@ -60,6 +60,8 @@ class UploadRequest
     public function __construct()
     {
         $this->assets = [];
+        $this->message = null;
+        $this->parent = null;
     }
 
     /**
