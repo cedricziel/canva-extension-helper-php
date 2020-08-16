@@ -10,6 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
+use function PHPUnit\Framework\assertEquals;
 
 class TimestampMiddlewareTest extends TestCase
 {
@@ -58,7 +59,22 @@ class TimestampMiddlewareTest extends TestCase
         $request->expects(self::once())->method('getHeader')
             ->with(Request::HEADER_TIMESTAMP)->willReturn($sentTimestamp);
 
-        (new TimestampMiddleware($logger, $responseFactory))->process($request, $handler);
+        /** @var TimestampMiddleware $middleware */
+        $middleware = $this->getMockBuilder(TimestampMiddleware::class)
+            ->setConstructorArgs([
+                $logger,
+                $responseFactory,
+                300
+            ])
+            ->onlyMethods(['getReceivingTimestamp'])
+            ->getMock()
+        ;
+        $middleware->method('getReceivingTimestamp')->willReturn($receivedAt);
+
+        $producedResponse = $middleware->process($request, $handler);
+        if (!$valid) {
+            assertEquals(401, $producedResponse->getStatusCode());
+        }
     }
 
     public function provideTimestamps(): array

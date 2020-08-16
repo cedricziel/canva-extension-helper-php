@@ -57,11 +57,21 @@ class TimestampMiddleware implements MiddlewareInterface
         $sentTimestamp = (int)$request->getHeader(Request::HEADER_TIMESTAMP);
 
         // Do the actual checking
-        if (!HttpHelper::verifyTimestamp($sentTimestamp, time(), $this->leniency)) {
+        if (!HttpHelper::verifyTimestamp($sentTimestamp, $this->getReceivingTimestamp(), $this->leniency)) {
             $this->logger->error('Rejecting request. Timestamps are not close enough.');
             return $this->responseFactory->createResponse(401);
         }
 
         return $handler->handle($request);
+    }
+
+    /**
+     * Gets the timestamp when the request was received. Ripped out for testing purposes.
+     *
+     * @return int
+     */
+    protected function getReceivingTimestamp(): int
+    {
+        return time();
     }
 }
