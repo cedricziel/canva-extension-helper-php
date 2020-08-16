@@ -25,9 +25,11 @@ class UploadResponse implements Response
      */
     private ?string $url;
 
-    public function __construct(string $type = Response::SUCCESS)
+    public function __construct(string $type = Response::SUCCESS, ?string $id = null, ?string $url = null)
     {
         $this->type = $type;
+        $this->id = $id;
+        $this->url = $url;
     }
 
     /**
