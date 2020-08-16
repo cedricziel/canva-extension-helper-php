@@ -25,6 +25,11 @@ class UploadResponse implements Response
      */
     private ?string $url;
 
+    public function __construct(string $type = Response::SUCCESS)
+    {
+        $this->type = $type;
+    }
+
     /**
      * @return string
      */
