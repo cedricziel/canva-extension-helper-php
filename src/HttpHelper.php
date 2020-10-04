@@ -56,9 +56,13 @@ class HttpHelper
 
         $message = sprintf('v1:%s:%s:%s:%s:%s', $time, $user, $brand, $extensions, $state);
 
-        $messageHmac = hash_hmac('sha256', $message, $secret);
+        $messageHmac = hash_hmac('sha256', $message, self::decodeSecret($secret));
 
-        return is_array($signatures) && in_array($messageHmac, $signatures, true);
+        if (!is_array($signatures)) {
+            return $messageHmac === $signatures;
+        }
+
+        return in_array($messageHmac, $signatures, true);
     }
 
     /**
