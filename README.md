@@ -4,6 +4,14 @@ Some utilities for building canva extensions.
 
 ## Usage
 
+### Installation
+
+Via composer:
+
+```
+composer require cedricziel/canva-extension-helper
+```
+
 ### With Symfony
 
 Symfony projects usually come with a fully configured serializer and a configured http server layer.
