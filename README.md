@@ -160,6 +160,16 @@ class PublishExtensionController extends AbstractController implements EventSubs
 }
 ```
 
+You can then "bind" the `$canvaSecret` constructor argument to your Canva.com secret in `services.yaml`:
+
+```yaml
+services:
+    _defaults:
+        # .. other defaults
+        bind:
+            $canvaSecret: 'my-secret'
+```
+
 ## Serialization
 
 **Note:** This project provides model classes. De-/Serialization must be done by means of your application.
