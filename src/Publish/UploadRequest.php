@@ -57,6 +57,13 @@ class UploadRequest
      */
     private ?string $parent;
 
+    /**
+     * The ID of the user's design. This ID is obfuscated and does not change if the user republishes their design.
+     *
+     * @var string
+     */
+    private string $designId;
+
     public function __construct()
     {
         $this->assets = [];
@@ -169,6 +176,23 @@ class UploadRequest
     public function setParent(?string $parent): UploadRequest
     {
         $this->parent = $parent;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDesignId(): ?string
+    {
+        return $this->designId;
+    }
+
+    /**
+     * @param string|null $designId
+     */
+    public function setDesignId(?string $designId): UploadRequest
+    {
+        $this->designId = $designId;
         return $this;
     }
 }
