@@ -18,11 +18,13 @@ class UploadRequestTest extends TestCase
         $assetUrl = 'https://s3.amazonaws.com/.../49-04fa92cbfbf8.jpg';
         $assetType = 'JPG';
         $assetName = '0001-144954.jpg';
+        $designId = 'ARvuXGj-bG4yvs4-KZbtSzRCCyRBh-sDyQP0-cK8cBk=';
 
         $request = '{
           "user": "' . $user . '",
           "brand": "' . $brand . '",
           "label": "' . $label . '",
+          "designId": "' . $designId . '",
           "assets": [
             {
               "url": "' . $assetUrl . '",
@@ -38,6 +40,7 @@ class UploadRequestTest extends TestCase
         self::assertEquals($user, $uploadRequest->getUser());
         self::assertEquals($brand, $uploadRequest->getBrand());
         self::assertEquals($label, $uploadRequest->getLabel());
+        self::assertEquals($designId, $uploadRequest->getDesignId());
 
         self::assertCount(1, $uploadRequest->getAssets());
 
