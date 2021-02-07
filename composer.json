@@ -35,7 +35,8 @@
         "symfony/property-info": "^5.1"
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "fix": "@php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix"
     },
     "suggest": {
         "symfony/serializer": "For quick and easy de-/serialization"
