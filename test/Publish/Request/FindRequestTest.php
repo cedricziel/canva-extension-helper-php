@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Canva\Test\Publish\Request;
 
 use Canva\Publish\Request\FindRequest;

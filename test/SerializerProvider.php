@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Canva\Test;
 
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;

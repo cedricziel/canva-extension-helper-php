@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Canva\Publish\Request;
 
 use Canva\Publish\UploadAsset;
