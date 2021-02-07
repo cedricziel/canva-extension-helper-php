@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Canva\Content\Response;
@@ -11,8 +12,6 @@ class ImageResponse implements Response
 {
     /**
      * The type of response.
-     *
-     * @var string
      */
     private string $type;
 
@@ -25,8 +24,6 @@ class ImageResponse implements Response
 
     /**
      * A token for paginating resources.
-     *
-     * @var string|null
      */
     private ?string $continuation;
 
@@ -51,29 +48,23 @@ class ImageResponse implements Response
 
     /**
      * @param array|ContentImage[] $resources
-     * @return ImageResponse
      */
     public function setResources(array $resources = []): ImageResponse
     {
         $this->resources = $resources;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getContinuation(): ?string
     {
         return $this->continuation;
     }
 
-    /**
-     * @param string|null $continuation
-     * @return ImageResponse
-     */
     public function setContinuation(?string $continuation): ImageResponse
     {
         $this->continuation = $continuation;
+
         return $this;
     }
 }

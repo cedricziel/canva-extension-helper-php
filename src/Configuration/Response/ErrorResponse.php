@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Canva\Configuration\Response;
@@ -17,18 +18,11 @@ use Canva\Response;
  */
 class ErrorResponse implements Response
 {
-    /**
-     * @var string
-     */
     private string $errorCode;
 
-    /**
-     * @var string
-     */
     private string $type;
 
     /**
-     * @param string $errorCode
      * @see Error
      */
     public function __construct(string $errorCode)

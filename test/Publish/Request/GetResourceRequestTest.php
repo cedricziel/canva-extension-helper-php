@@ -20,12 +20,12 @@ class GetResourceRequestTest extends TestCase
         $preferredThumbnailHeight = '50';
 
         $request = '{
-          "user": "' . $user . '",
-          "brand": "' . $brand . '",
-          "label": "' . $label . '",
-          "id": "' . $id . '",
-          "preferredThumbnailWidth": ' . $preferredThumbnailWidth . ',
-          "preferredThumbnailHeight": ' . $preferredThumbnailHeight . '
+          "user": "'.$user.'",
+          "brand": "'.$brand.'",
+          "label": "'.$label.'",
+          "id": "'.$id.'",
+          "preferredThumbnailWidth": '.$preferredThumbnailWidth.',
+          "preferredThumbnailHeight": '.$preferredThumbnailHeight.'
         }';
 
         $serializer = self::getSerializer();

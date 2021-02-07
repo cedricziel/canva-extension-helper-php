@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Canva\Content\Response;
@@ -10,8 +11,6 @@ class EmbedResponse implements Response
 {
     /**
      * The type of response.
-     *
-     * @var string
      */
     private string $type;
 
@@ -24,8 +23,6 @@ class EmbedResponse implements Response
 
     /**
      * A token for paginating resources.
-     *
-     * @var string|null
      */
     private ?string $continuation;
 
@@ -50,29 +47,23 @@ class EmbedResponse implements Response
 
     /**
      * @param array|ContentEmbed[] $resources
-     * @return EmbedResponse
      */
     public function setResources(array $resources = []): EmbedResponse
     {
         $this->resources = $resources;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getContinuation(): ?string
     {
         return $this->continuation;
     }
 
-    /**
-     * @param string|null $continuation
-     * @return EmbedResponse
-     */
     public function setContinuation(?string $continuation): EmbedResponse
     {
         $this->continuation = $continuation;
+
         return $this;
     }
 }

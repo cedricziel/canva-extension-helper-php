@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Canva;
@@ -9,12 +10,6 @@ class HttpHelper
 {
     /**
      * @see https://www.canva.com/developers/docs/verify-timestamp#php
-     *
-     * @param int $sentAtSeconds
-     * @param int $receivedAtSeconds
-     * @param int $leniencyInSeconds
-     *
-     * @return bool
      */
     public static function verifyTimestamp(int $sentAtSeconds, int $receivedAtSeconds, int $leniencyInSeconds = 300): bool
     {
@@ -24,22 +19,14 @@ class HttpHelper
     /**
      * Before an extension can generate a request signature, it must decode the app's client secret from a
      * base64url-encoded string into a byte array.
-     *
-     * @param string $secret
-     * @return string
      */
     public static function decodeSecret(string $secret): string
     {
-        return base64_decode(strtr($secret, '-_', '+/'));
+        return base64_decode(strtr($secret, '-_', '+/'), true);
     }
 
     /**
      * Checks if a PSR-7 GET request contains the correct hmac.
-     *
-     * @param ServerRequestInterface $request
-     * @param string $secret
-     *
-     * @return bool
      */
     public static function checkPsrGetRequestSignature(ServerRequestInterface $request, string $secret): bool
     {
@@ -67,11 +54,6 @@ class HttpHelper
 
     /**
      * Checks if a PSR-7 POST request contains the correct hmac.
-     *
-     * @param ServerRequestInterface $request
-     * @param string $secret
-     *
-     * @return bool
      */
     public static function checkPsrPostRequestSignature(ServerRequestInterface $request, string $secret): bool
     {
@@ -86,9 +68,9 @@ class HttpHelper
         }
 
         $signatures = $request->getHeader(Request::HEADER_SIGNATURES);
-        $signature = self::calculatePostSignature((int)$timestamp, $request->getUri()->getPath(), $request->getBody()->getContents(), $secret);
+        $signature = self::calculatePostSignature((int) $timestamp, $request->getUri()->getPath(), $request->getBody()->getContents(), $secret);
 
-        return in_array($signature, $signatures);
+        return in_array($signature, $signatures, true);
     }
 
     public static function calculatePostSignature(int $timestamp, string $path, string $body, string $secret): string

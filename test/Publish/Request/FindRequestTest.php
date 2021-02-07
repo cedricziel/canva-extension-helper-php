@@ -19,12 +19,12 @@ class FindRequestTest extends TestCase
         $thumbnailWidth = '50';
         $thumbnailHeight = '50';
         $request = '{
-          "user": "' . $user . '",
-          "brand": "' . $brand . '",
-          "label": "' . $label . '",
-          "limit": ' . $limit . ',
-          "preferredThumbnailWidth": ' . $thumbnailWidth . ',
-          "preferredThumbnailHeight": ' . $thumbnailHeight . '
+          "user": "'.$user.'",
+          "brand": "'.$brand.'",
+          "label": "'.$label.'",
+          "limit": '.$limit.',
+          "preferredThumbnailWidth": '.$thumbnailWidth.',
+          "preferredThumbnailHeight": '.$thumbnailHeight.'
         }';
 
         /** @var FindRequest $findRequest */

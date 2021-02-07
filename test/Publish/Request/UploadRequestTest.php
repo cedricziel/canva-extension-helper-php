@@ -21,15 +21,15 @@ class UploadRequestTest extends TestCase
         $designId = 'ARvuXGj-bG4yvs4-KZbtSzRCCyRBh-sDyQP0-cK8cBk=';
 
         $request = '{
-          "user": "' . $user . '",
-          "brand": "' . $brand . '",
-          "label": "' . $label . '",
-          "designId": "' . $designId . '",
+          "user": "'.$user.'",
+          "brand": "'.$brand.'",
+          "label": "'.$label.'",
+          "designId": "'.$designId.'",
           "assets": [
             {
-              "url": "' . $assetUrl . '",
-              "type": "' . $assetType . '",
-              "name": "' . $assetName . '"
+              "url": "'.$assetUrl.'",
+              "type": "'.$assetType.'",
+              "name": "'.$assetName.'"
             }
           ]
         }';

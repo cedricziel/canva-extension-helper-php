@@ -9,8 +9,6 @@ class GetResourceResponse implements Response
 {
     /**
      * The type of response.
-     *
-     * @var string
      */
     private string $type;
 
@@ -27,21 +25,15 @@ class GetResourceResponse implements Response
         $this->resource = $resource;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     * @return GetResourceResponse
-     */
     public function setType(string $type): GetResourceResponse
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -55,11 +47,11 @@ class GetResourceResponse implements Response
 
     /**
      * @param ?PublishResource $resource
-     * @return GetResourceResponse
      */
     public function setResource(?PublishResource $resource): GetResourceResponse
     {
         $this->resource = $resource;
+
         return $this;
     }
 }

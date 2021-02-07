@@ -18,11 +18,11 @@ class FindRequestTest extends TestCase
         $limit = '100';
         $locale = 'de';
         $request = '{
-          "user": "' . $user . '",
-          "brand": "' . $brand . '",
-          "label": "' . $label . '",
-          "limit": ' . $limit . ',
-          "locale": "' . $locale . '"
+          "user": "'.$user.'",
+          "brand": "'.$brand.'",
+          "label": "'.$label.'",
+          "limit": '.$limit.',
+          "locale": "'.$locale.'"
         }';
 
         /** @var FindRequest $findRequest */

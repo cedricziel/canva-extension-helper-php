@@ -4,13 +4,13 @@ namespace Canva\Test;
 
 use Canva\Middleware\TimestampMiddleware;
 use Canva\Request;
+use function PHPUnit\Framework\assertEquals;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
-use function PHPUnit\Framework\assertEquals;
 
 class TimestampMiddlewareTest extends TestCase
 {
@@ -35,10 +35,6 @@ class TimestampMiddlewareTest extends TestCase
 
     /**
      * @dataProvider provideTimestamps
-     *
-     * @param int $sentTimestamp
-     * @param int $receivedAt
-     * @param bool $valid
      */
     public function testWillDeclineWithIncorrectTimestamps(int $sentTimestamp, int $receivedAt, bool $valid): void
     {
@@ -64,7 +60,7 @@ class TimestampMiddlewareTest extends TestCase
             ->setConstructorArgs([
                 $logger,
                 $responseFactory,
-                300
+                300,
             ])
             ->onlyMethods(['getReceivingTimestamp'])
             ->getMock()

@@ -36,7 +36,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "fix": "@php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix"
+        "fix": "@php tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
     "suggest": {
         "symfony/serializer": "For quick and easy de-/serialization"

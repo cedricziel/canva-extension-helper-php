@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Canva\Middleware;
@@ -18,20 +19,12 @@ use Psr\Log\LoggerInterface;
  */
 class PostHMACMiddleware implements MiddlewareInterface
 {
-    /**
-     * @var LoggerInterface
-     */
     private LoggerInterface $logger;
 
-    /**
-     * @var ResponseFactoryInterface
-     */
     private ResponseFactoryInterface $responseFactory;
 
     /**
-     * The secret provided by canva
-     *
-     * @var string
+     * The secret provided by canva.
      */
     private string $secret;
 
