@@ -3,6 +3,8 @@
 
 namespace Canva\Publish;
 
+use Canva\Request;
+
 /**
  * POST /publish/resources/get
  *
@@ -20,7 +22,7 @@ namespace Canva\Publish;
  *
  * @see https://www.canva.com/developers/docs/publish-extensions/api/post-publish-resources-get/
  */
-class GetResourceRequest
+class GetResourceRequest implements Request
 {
     /**
      * The ID of the user's brand.

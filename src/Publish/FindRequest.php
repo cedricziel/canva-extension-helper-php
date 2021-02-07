@@ -2,6 +2,8 @@
 
 namespace Canva\Publish;
 
+use Canva\Request;
+
 /**
  * POST /publish/resources/find
  *
@@ -18,7 +20,7 @@ namespace Canva\Publish;
  *
  * @see https://www.canva.com/developers/docs/publish-extensions/api/post-publish-resources-find/
  */
-class FindRequest
+class FindRequest implements Request
 {
     /**
      * The ID of the user's brand.

@@ -2,6 +2,8 @@
 
 namespace Canva\Publish;
 
+use Canva\Request;
+
 /**
  * When a user publishes their design, Canva sends a POST request to the following URL:
  *
@@ -12,7 +14,7 @@ namespace Canva\Publish;
  *
  * @see https://www.canva.com/developers/docs/publish-extensions/api/post-publish-resources-upload/
  */
-class UploadRequest
+class UploadRequest implements Request
 {
     /**
      * The assets to upload to the destination platform.
