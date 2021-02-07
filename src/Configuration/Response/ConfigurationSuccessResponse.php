@@ -1,11 +1,11 @@
 <?php
 
-namespace Canva\Configuration;
+namespace Canva\Configuration\Response;
 
-class ConfigurationResponse
+use Canva\Response;
+
+class ConfigurationSuccessResponse implements Response
 {
-    public const TYPE_PUBLISH = 'PUBLISH';
-
     /**
      * The type(s) of extensions that have been successfully configured.
      *
@@ -30,9 +30,9 @@ class ConfigurationResponse
 
     /**
      * @param array $labels
-     * @return ConfigurationResponse
+     * @return ConfigurationSuccessResponse
      */
-    public function setLabels(array $labels): ConfigurationResponse
+    public function setLabels(array $labels): ConfigurationSuccessResponse
     {
         $this->labels = $labels;
         return $this;
@@ -48,9 +48,9 @@ class ConfigurationResponse
 
     /**
      * @param string $type
-     * @return ConfigurationResponse
+     * @return ConfigurationSuccessResponse
      */
-    public function setType(string $type): ConfigurationResponse
+    public function setType(string $type): ConfigurationSuccessResponse
     {
         $this->type = $type;
         return $this;

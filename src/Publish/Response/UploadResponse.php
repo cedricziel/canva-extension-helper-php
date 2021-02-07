@@ -1,6 +1,6 @@
 <?php
 
-namespace Canva\Publish;
+namespace Canva\Publish\Response;
 
 use Canva\Response;
 

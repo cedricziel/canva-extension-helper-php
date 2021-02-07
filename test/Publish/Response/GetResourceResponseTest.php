@@ -1,8 +1,8 @@
 <?php
 
-namespace Canva\Test\Publish;
+namespace Canva\Test\Publish\Response;
 
-use Canva\Publish\GetResourceResponse;
+use Canva\Publish\Response\GetResourceResponse;
 use Canva\Publish\PublishResource;
 use Canva\Response;
 use Canva\Test\SerializerProvider;

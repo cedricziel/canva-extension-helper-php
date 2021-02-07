@@ -1,10 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Canva\Content\Response;
+namespace Canva\Publish\Response;
+
+use Canva\Response;
 
 /**
- * If a content extension is unable to return a "SUCCESS" response, it should return an "ERROR" response.
+ * If a publish extension is unable to return a "SUCCESS" response, it should return an "ERROR" response.
  *
  * If a request signature cannot be verified, an "ERROR" response should not be returned.
  * You should respond to the request with a status code of 401.

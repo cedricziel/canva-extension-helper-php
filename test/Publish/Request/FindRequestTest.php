@@ -1,8 +1,8 @@
 <?php
 
-namespace Canva\Test\Publish;
+namespace Canva\Test\Publish\Request;
 
-use Canva\Publish\FindRequest;
+use Canva\Publish\Request\FindRequest;
 use Canva\Test\SerializerProvider;
 use PHPUnit\Framework\TestCase;
 

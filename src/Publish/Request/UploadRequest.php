@@ -1,7 +1,8 @@
 <?php
 
-namespace Canva\Publish;
+namespace Canva\Publish\Request;
 
+use Canva\Publish\UploadAsset;
 use Canva\Request;
 
 /**
